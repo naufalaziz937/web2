@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Film</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="filmcss.css">
+</head>
+
+<body>
+    <audio id="myAudio" src="tiramisu.mp3" preload="auto"></audio>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <span class="bars" id="bars"><i class="fa fa-bars"></i></span>
+            <div class="links" id="navigation">
+                <li><a href="index.html" class="link">Home</a></li>
+                <a href="#" class="link" onclick="playMusic()">Music</a>
+                <li><a href="film.html" class="link">Film</a></li>
+                <li><a href="tokoh.html" class="link">Tokoh</a></li>
+
+            </div>
+
+            <div class="options" id="options">
+                <span class="close" id="close"><i class="fa fa-close"></i></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section home" id="home">
+        <table border="2" width="880" style="margin-left: -800px;">
+            <tr align="center">
+                <th><i>film</i></th>
+                <th><i>Main Character</i></th>
+                <th><i>Sinopsis</i></th>
+            </tr>
+            <tr>
+                <td align="center"><img src="https://i.pinimg.com/736x/7f/c3/f5/7fc3f524abcc3b8ccbf50f62aaed9078.jpg" width="150"><p><u>Dispicable Me 4</u></p></td>
+                <td align="center"><img src="https://i.pinimg.com/564x/db/79/8c/db798c08137182b139c0f570ddf281b2.jpg" width="150" style="margin: 5px;"><p>Gru</p></td>
+                <td align="center">Gru dan Lucy, bersama dengan anak-anak mereka Margo, Edith, dan Agnes, menyambut anggota baru keluarga, yaitu Gru Jr., yang suka merecoki ayahnya</td>
+            </tr>
+            <tr>
+                <td align="center"><img src="https://i.pinimg.com/564x/a1/6c/89/a16c89e3dcd2bbc3d19c1c23ceaf266d.jpg" width="150"><p>Coco</p></td>
+                <td align="center"><img src="https://i.pinimg.com/564x/00/84/4f/00844f31a24367d76e12c4374df3e142.jpg" width="150"><p>Miguel</p></td>
+                <td align="center">Film ini mengisahkan tentang Miguel Rivera, seorang anak laki-laki berusia 12 tahun yang tinggal di sebuah desa kecil di Meksiko.</td>
+            </tr>
+        </table>
+    </section>
+    <script src="https://www.unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+
+    <script>
+
+        const bars = document.getElementById('bars')
+        const close = document.getElementById('close')
+        const navigation = document.getElementById('navigation')
+        const options = document.getElementById('options')
+
+        bars.addEventListener('click', function () {
+            navigation.classList.add('active')
+            options.classList.add('active')
+
+        });
+        close.addEventListener('click', function () {
+            navigation.classList.remove('active')
+            options.classList.remove('active')
+
+        })
+        const rv = scrollReveal({
+            origin: 'top',
+            distance: '60px',
+            duration: 1000,
+            delay: 1000
+        })
+        sr.reveal('.title', { delay: 1200 });
+
+        function playMusic() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+
+    </script>
+
+</body>
+
+</html>

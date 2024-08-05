@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Film</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="filmcss.css">
+</head>
+
+<body>
+    <audio id="myAudio" src="tiramisu.mp3" preload="auto"></audio>
+    <audio id="backsound" autoplay loop>
+        <source src="out.mp3" type="audio/mp3">
+    </audio>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <span class="bars" id="bars"><i class="fa fa-bars"></i></span>
+            <div class="links" id="navigation">
+                <li><a href="index.html" class="link">Home</a></li>
+                <li><a href="film.html" class="link">Film</a></li>
+                <li><a href="tokoh.html" class="link">Tokoh</a></li>
+
+            </div>
+
+            <div class="options" id="options">
+                <span class="close" id="close"><i class="fa fa-close"></i></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section home" id="home">
+
+        <div class="container">
+            <div class="items">
+                <div class="item">
+                    <h1 class="title"><b>Inside Out 2</b></h1>
+                    <div class="rating">
+                        <strong>4.5/ <small>5</small></strong>
+                        <span class="icon active"><i class="fa fa-star"></i></span>
+                        <span class="icon active"><i class="fa fa-star"></i></span>
+                        <span class="icon active"><i class="fa fa-star"></i></span>
+                        <span class="icon active"><i class="fa fa-star"></i></span>
+                        <span class="icon "><i class="fa fa-star"></i></span>
+                    </div>
+                    <div class="desc">
+                        <p>
+                            <mark>Inside Out 2</mark>  melanjutkan kisah <i>Riley Andersen</i> yang kini beranjak remaja dan menghadapi masa
+                            pubertas.
+                        </p>
+                    </div>
+                    <div class="btns">
+                        <a onclick="playOrStopBacksound()" class="btn btn-cart">Play/Stop Music</a>
+                        <a href="film2.html" class="btn btn-cart" target="_blank">More Film</a>
+                    </div>
+                    <h1 style="color: white; margin: 25px; margin-left: 250px; margin-top: 100px;">Trailer</h1>
+                    <div class="video-container">
+                        <video width="100%" height="100%" controls>
+                            <source src="Inside Out 2 _ Official Trailer.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-image">
+                        <img src="poster.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://www.unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+
+    <script>
+
+        const bars = document.getElementById('bars')
+        const close = document.getElementById('close')
+        const navigation = document.getElementById('navigation')
+        const options = document.getElementById('options')
+
+        bars.addEventListener('click', function () {
+            navigation.classList.add('active')
+            options.classList.add('active')
+
+        });
+        close.addEventListener('click', function () {
+            navigation.classList.remove('active')
+            options.classList.remove('active')
+
+        })
+        const rv = scrollReveal({
+            origin: 'top',
+            distance: '60px',
+            duration: 1000,
+            delay: 1000
+        })
+        sr.reveal('.title', { delay: 1200 });
+
+        var isPlaying = false;
+
+        function playOrStopBacksound() {
+            var audio = document.getElementById("backsound");
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+            } else {
+                audio.play();
+                isPlaying = true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
